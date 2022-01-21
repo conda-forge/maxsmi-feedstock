@@ -1,5 +1,5 @@
 {% set name = "maxsmi" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/volkamerlab/{{ name|lower }}/archive/v{{ version }}.tar.gz
-  sha256: 3c936f9486cf05e1a73c1b10815510ad1d5f94073998aab3bd72be59f9902de1
+  sha256: 98db389dba11e1cf88220cb833aa1b0c6bb3bc4054775d2a7ab4c9843c71b9cc
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -41,7 +41,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Maximizing molecular property prediction performance using SMILES augmentation and deep learning'
+  summary: Maximizing molecular property prediction performance using SMILES augmentation and deep learning
   description: |
     SMILES augmentation for deep learning based molecular property and activity prediction.
   doc_url: https://maxsmi.readthedocs.io/en/latest/
