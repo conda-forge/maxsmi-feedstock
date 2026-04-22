@@ -11,15 +11,15 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - jupyter
     - jupyterlab
     - rdkit >=2018.09.2.0
@@ -33,6 +33,8 @@ requirements:
     - dataframe_image
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - maxsmi
 
